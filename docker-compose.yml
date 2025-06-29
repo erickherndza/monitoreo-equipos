@@ -1,0 +1,30 @@
+version: '3.9'
+services:
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_DB: monitoreo
+      POSTGRES_USER: usuario
+      POSTGRES_PASSWORD: clave
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  api:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      DB_NAME: monitoreo
+      DB_USER: usuario
+      DB_PASSWORD: clave
+      DB_HOST: db
+      DB_PORT: 5432
+      SECRET_TOKEN: mi_token_secreto
+    depends_on:
+      - db
+
+volumes:
+  pgdata:
