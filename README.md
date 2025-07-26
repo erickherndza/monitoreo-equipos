@@ -229,7 +229,7 @@ Para soporte técnico o consultas:
 
 ---
 
-**Desarrollado por**: Manus AI  
+**Desarrollado por**: Erick Hernandez y Manus AI  
 **Versión**: 1.0.0  
 **Fecha**: Julio 2025
 
